@@ -1,0 +1,131 @@
+.container {
+    padding-top: 10%;
+    padding-left: 30px;
+    margin: 20px;
+    z-index: 1;
+  }
+    
+.container h3 {
+    position: relative;
+    padding-top: 50px;
+    font-size: 1.5rem;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: rgb(55, 55, 104);
+  }
+  
+.container h3::after {
+    content: ''; /* empty pseudo-element */
+    position: absolute; /* Position it relative to the h3 */
+    left: 0;
+    bottom: -30px; /* Aligns it at the bottom of the h3 */
+    width: 20%; /* Stretches the background to the full width of the text */
+    height: 5px; /* Thickness of the background underline */
+    background-color: #95aab4;
+    z-index: -1; /* To ensures the underline stays behind the text */
+  
+  }
+
+  /* Text Information Styling */
+.text-info {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* 2 columns on larger screens */
+    gap: 3rem;
+    text-align:left;
+    font-family: 'Playfair Display', serif;
+    font-weight: 200;
+    /* padding-top: 15%; */
+  }
+
+.text-info img {
+    width: 100%; /* Ensures the image adjusts to the container's width */
+    height: auto; /* Maintains the image's aspect ratio */
+    max-height: 100vh; /* Ensures the image fits within the viewport */
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
+    border-radius: 50%; /* Optional: Makes the image circular */
+    padding: 10px; /* Optional: Adds spacing around the image */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+    background-color:  rgb(4, 22, 13); 
+}
+.text-info p {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    padding-top: 130px;
+    bottom: 40%;
+    color: rgb(22, 44, 88);
+    height: 60%;
+    line-height: 1.5;
+  }
+  a.btn {
+    display: inline-block;
+    padding: 8px 25px;
+    margin: 25px;
+    border: none;
+    background-color: rgb(58, 78, 68);
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(252, 253, 255, 0.952); 
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a.btn:hover {
+    background-color: rgba(143, 149, 53, 0.584); ;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+a .btn:hover{
+    color: white;
+}
+a .btn{
+    color:  rgb(53, 39, 39);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+  /* Media Queries for responsiveness */
+  
+  /* Tablets and smaller screens (768px and below) */
+  @media only screen and (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Stack content in one column */
+      padding-top: 8%; /* Adjust padding */
+      gap: 1.5rem; /* Reduce gap */
+    }
+  
+    .text-info h3 {
+      font-size: 2.5rem; /* Reduce font size */
+    }
+  
+    .text-info {
+      padding-top: 5%; /* Reduce top padding */
+    }
+  }
+  
+  /* Mobile devices (480px and below) */
+  @media only screen and (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr; /* One column layout */
+      gap: 1rem; /* Smaller gap */
+      padding-top: 10%; /* Adjust padding */
+    }
+  
+    .text-info h3 {
+      font-size: 2rem; /* Smaller font size for mobile */
+    }
+  
+    .text-info {
+      padding-top: 5%; /* Further reduce padding */
+      padding-left: 5px; /* Adjust side padding */
+    }
+  
+    .text-info p {
+      font-size: 0.9rem; /* Adjust text size in paragraphs */
+      padding: 8px; /* Reduce padding */
+    }
+  }
+  

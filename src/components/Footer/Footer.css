@@ -1,0 +1,73 @@
+.ftr {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    background-color: rgba(50, 54, 2, 0.584);  /* Adding a background color for visibility */
+    color: white; /* Footer text color */
+    padding: 20px 0;
+    margin-top: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer ul > li {
+    display: inline-block;
+    margin: 0 15px; /* Space between links */
+}
+
+.footer ul > li a {
+    color: white; /* Link color */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer ul > li a:hover {
+    color: rgb(186, 109, 84); /* Change link color on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: lightgray;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: rgba(134, 4, 4, 0.952); /* Highlight color */
+}
+
+
+.footer-bottom a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+    color: rgba(134, 4, 4, 0.952);
+}

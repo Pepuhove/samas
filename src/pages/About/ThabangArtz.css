@@ -1,0 +1,150 @@
+.cntr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align text to the left */
+    height: auto; /* Adjust based on content height */
+    width: 100%; /* Full width */
+    padding: 100px;
+    background-color: #f4f4f4; /* Adjust background color */
+    box-sizing: border-box;
+}
+
+.cntr h3 {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; /* Bold */
+    color:black;
+    margin-bottom: 20px;
+}
+
+.cntr-info {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: lightslategrey;
+    line-height: 1.7;
+    max-width: 1000px; /* Max width for readability */
+    text-align: left;
+}
+
+.cntr-info p {
+    padding: 40px;
+    padding-left: 15%;
+}
+
+.cntr-info br {
+    margin-bottom: 1rem; /* Adds spacing between paragraphs when using <br /> */
+}
+
+/* About Fanuel */
+
+
+.info-cntr{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* 2 columns on larger screens */
+    gap: 3rem;
+    text-align:left;
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10%;
+  }
+
+  .info-cntr img {
+    border-radius: 100px;
+    width: 100%; /* Ensures full width within the grid column */
+    max-height: 100vh; /* Limits image height to viewport */
+    object-fit: cover; /* Ensures proper scaling */
+    padding: 10px; /* Adds spacing inside the image container */
+    clip-path: circle(74.6% at 32% 33%);
+  }
+  .info-cntr h3{
+    position: absolute;
+    padding-left: 55%;
+    color: #003366;
+    font-size: 1.2rem;
+  
+  }
+  .info-cntr p {
+    padding-top: 10%;
+    padding-right: 30px;
+    bottom: 40%;
+    color: rgb(114, 136, 159);
+    font-weight: 200;
+    height: 60%;
+    line-height: 1.5;
+  }
+  .unique-btn {
+    color: #0e0e0f !important; /* Change the text color */
+    text-decoration: none; /* Example: add underline */
+    font-weight: bold !important; /* Example: bold text */
+    padding: 10px 20px !important; /* Adjust padding */
+    border: solid #007bff; /* Add a border */
+    margin-left: 60px !important;
+    align-self: center !important;
+    background-color: #9cb4ce !important;
+  }
+  
+  .unique-btn:hover {
+    background-color: #0f2c4b !important; /* Add hover effect */
+    color: #fff !important; /* Change text color on hover */
+  }
+  
+  /* Sculpture */
+  .sculpture{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .sculpture h4, h2{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+  }
+  .sculpture h2{
+    font-weight: 700; /* Bold */
+    color: black;
+    font-size: 2.5rem;
+  }
+  h2 span {
+    display: block; /* Forces 'Creations' to appear on a new line */
+    text-align: center; /* Optional: centers the 'Creations' text under 'Timeless Stone' */
+  }
+  .sculpture h4{
+    font-size: 1rem;
+  }
+  
+  .sculpture h4{
+    color: lightslategray;
+  }
+  h4 span{
+    display: block; /* Forces 'Creations' to appear on a new line */
+    text-align: center;
+    line-height: 2.5;
+  }
+  .sculp-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    right: 50px;
+    left: 24px;
+    justify-items: center; /* Centers items horizontally within each grid cell */
+    align-items: center; /* Centers items vertically within each grid cell */
+  }
+  
+  .sculp-grid img{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+  }
+  .sculp-grid div > p, p span{
+    text-align: center;
+    color: lightslategray;
+    font-family: 'Playfair Display', serif;
+  }
+  p span{
+    display: block; /* Forces 'Creations' to appear on a new line */
+    line-height: 2.5;
+    font-weight: bolder;
+  }

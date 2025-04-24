@@ -1,0 +1,44 @@
+.home-intro {
+    justify-content: center;
+    align-items: flex-start; /* Aligns the content to the left */
+    width: 100%;
+    padding-left: 50px; /* Adjust as needed */
+    top: 0;
+    margin: 0;
+    left: 0;
+    padding-top: 38.25%;  /* 16:9 aspect ratio */
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/public/img/zim-2.jpg');
+}
+
+.home-intro h1{
+    color: aliceblue;
+    padding-left: 50px;
+    margin: 0;
+}
+.home-intro h3{
+    color: aliceblue;
+    padding-left: 65px;
+    padding-top: 15px;
+    margin: 0;
+}
+.glry-cln{
+    padding: 20px;
+}
+.glry-cln .btn{
+    top: 10px;
+    margin-left: 50px;
+    padding: 15px;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.glry-cln .btn:hover {
+    background-color: #333;
+}

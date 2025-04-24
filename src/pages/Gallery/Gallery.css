@@ -1,0 +1,75 @@
+.glry-cntr {
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    padding-top: 30px;
+}
+/* intro */
+.glry-ovly{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* 2 columns on larger screens */
+    gap: 3rem;
+    text-align:left;
+    font-family: 'Roboto', sans-serif;
+}
+.glry-ovly img{
+    border-radius: 100px;
+    width: 100%; /* Ensures full width within the grid column */
+    max-height: 100vh; /* Limits image height to viewport */
+    object-fit: cover; /* Ensures proper scaling */
+    padding: 10px; /* Adds spacing inside the image container */
+    clip-path: circle(48.8% at 50% 51%);
+}
+.glry-ovly h2{
+    position: absolute;
+    padding-top: 10%;
+    padding-left: 35%;
+    color: rgba(143, 149, 53, 0.584); 
+    font-size: 2.5rem;
+}
+.glry-ovly p{
+    padding-top: 45%;
+    padding-right: 30px;
+    bottom: 40%;
+    color: lightslategrey;
+    height: 60%;
+}
+.glry-cntr h4{
+    padding: 40px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: lightslategray;
+}
+
+/* Gallery Grid Container */
+.glry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    grid-template-rows: auto;
+    gap: 13px; /* Space between grid items */
+    max-width: 1200px; /* Limit max width for a centered grid */
+    margin: 0 auto; /* Center the grid horizontally */
+    justify-items: center; /* Center items within the grid cells horizontally */
+    align-items: center; /* Center items within the grid cells vertically */
+    padding-right: 13%;
+    padding-left: 13%;
+}
+
+/* Gallery Items */
+.glry-prtfl {
+    width: 100%; /* Ensure the div fills the grid cell */
+    aspect-ratio: 25 / 35; /* Enforce a consistent aspect ratio for all items */
+    overflow: hidden; /* Hide overflow to crop images consistently */
+}
+
+.glry-prtfl img {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: 100%; /* Ensure the image takes up the full height of its container */
+    object-fit: cover; /* Crop the image to fit the container while maintaining aspect ratio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a polished look */
+    border: 1px solid black; /* Reduce border width */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 10px;
+}
+

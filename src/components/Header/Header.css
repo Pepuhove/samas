@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center; /* Ensures vertical alignment */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px; /* Add padding for spacing */
+    /* background-color: rgba(79, 104, 104, 0.9);  Semi-transparent background */
+    background-color:rgb(58, 78, 68);
+    /* background-color: rgb(46, 63, 68); */
+    z-index: 100; /* Keeps the header on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center; /* Vertically align the logo text and image */
+    gap: 10px; /* Space between the logo image and text */
+  }
+  
+  .logo h2 {
+    color: rgba(151, 158, 59, 0.584);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensure proper scaling */
+  }
+  
+  .navbar ul li button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: rgba(151, 158, 59, 0.584);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1; /* Adjust for vertical centering */
+  }
+  
+  .navbar ul li button:hover {
+    background-color: transparent;
+    color: rgba(157, 177, 208, 0.952); 
+    text-decoration: none;
+  }
+  
+  /* Ensure the navbar and call button align properly */
+  .navbar ul {
+    display: flex;
+    align-items: center; /* Vertical alignment of all nav items, including the button */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+ 
