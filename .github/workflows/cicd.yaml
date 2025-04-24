@@ -1,4 +1,4 @@
-name: Trivy
+name: Secure CI/CD Pipeline
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
-  docker-build-and-push:
+  docker-build:
     name: 🐳 Build and Push Docker Image
     runs-on: ubuntu-latest
     needs: [sonar, nodejs]
@@ -66,9 +66,9 @@ jobs:
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
   trivy:
-    name: 🛡️ Trivy + Gitleaks Scans
+    name: 🛡️ Trivy Vulnerability Scan
     runs-on: ubuntu-latest
-    needs: docker-build-and-push
+    needs: docker-build
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v3
@@ -78,21 +78,7 @@ jobs:
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
 
       - name: 🔍 FS Scan with Trivy
-        run: trivy fs --format json -o fs-report.json .
-
-      - name: 🔍 Gitleaks Code Scan
-        run: |
-          if ! command -v gitleaks &> /dev/null; then
-            curl -sSL https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks_$(uname -s)_$(uname -m).tar.gz | tar -xz && sudo mv gitleaks /usr/local/bin
-          fi
-          gitleaks detect --source . -r gitleaks-report.json -f json
-
-      - name: 🔐 Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+        run: trivy fs --format table -o fs-report.json .
 
       - name: 🔐 Login to Amazon ECR
         run: |
@@ -111,17 +97,31 @@ jobs:
             --output trivy-image-report.json \
             ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.REPOSITORY }}:${{ secrets.IMAGE_TAG }}
 
-      - name: 📤 Upload FS Trivy Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: trivy-fs-report
-          path: fs-report.json
-
-      - name: 📤 Upload Trivy Image Report
+      - name: 📤 Upload Trivy Report
         uses: actions/upload-artifact@v4
         with:
           name: trivy-image-report
           path: trivy-image-report.json
+
+  gitleaks:
+    name: 🔎 Gitleaks Secret Scan
+    runs-on: ubuntu-latest
+    needs: sonar
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: 📥 Install Gitleaks
+        run: |
+          GITLEAKS_VERSION=$(curl -s https://api.github.com/repos/gitleaks/gitleaks/releases/latest | grep tag_name | cut -d '"' -f 4)
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/$GITLEAKS_VERSION/gitleaks_$(uname -s)_$(uname -m).tar.gz -o gitleaks.tar.gz
+          tar -xzf gitleaks.tar.gz
+          chmod +x gitleaks
+          sudo mv gitleaks /usr/local/bin
+
+      - name: 🔍 Run Gitleaks Scan
+        run: |
+          gitleaks detect --source . -r gitleaks-report.json -f json
 
       - name: 📤 Upload Gitleaks Report
         uses: actions/upload-artifact@v4
