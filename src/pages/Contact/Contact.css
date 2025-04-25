@@ -1,0 +1,79 @@
+
+    .contact-info{
+      padding-top: 30px ;        
+      padding-left: 30px;
+      margin: 20px;
+      z-index: 1;
+      }
+        
+    .contact-info h3 {
+        position: relative;
+        padding-top: 50px;
+        font-size: 1.5rem;
+        font-family: 'Roboto', 'Arial', sans-serif;
+        color: rgb(55, 55, 104);
+      }
+      
+    .contact-info h3::after {
+        content: ''; /* empty pseudo-element */
+        position: absolute; /* Position it relative to the h3 */
+        left: 0;
+        bottom: -30px; /* Aligns it at the bottom of the h3 */
+        width: 20%; /* Stretches the background to the full width of the text */
+        height: 5px; /* Thickness of the background underline */
+        background-color: #95aab4;
+        z-index: -1; /* To ensures the underline stays behind the text */
+      
+      }
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 25px;
+    display: block;
+    text-align: left;
+    color: lightslategray;
+}
+
+input[type="text"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+input[type="submit"] {
+    width: 10%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color:lightslategray;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #acbabc;
+}
+

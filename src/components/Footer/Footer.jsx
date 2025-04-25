@@ -8,7 +8,6 @@ function Footer(){
     return(
         <footer className="ftr">
             <div className="footer">
-            <a href="/contact" className="btn">Make an Enquiry</a> 
                 <h2>THABANG ARTZ</h2>
             <ul>
                 <li><NavLink to="/about" exact activeClassName="active">About</NavLink></li>
@@ -21,13 +20,13 @@ function Footer(){
 
             <div className="social-links">
                 {/* Social Media Links */}
-                <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a href="https://facebook.com/fanuel.mutemasango/" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <FaFacebook />
                 </a>
-                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="social-icon">
+                <a href="https://wa.me/+27792889816" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <FaWhatsapp />
                 </a>
-                <a href="mailto:your-email@example.com" className="social-icon">
+                <a href="mailto:fanuelmutemasango@gmail.com" className="social-icon">
                     <FaEnvelope />
                 </a>
             </div>

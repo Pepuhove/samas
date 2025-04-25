@@ -12,7 +12,15 @@ function Navbar() {
         <li><NavLink to="/gallery" activeClassName="active">GALLERY</NavLink></li>
         <li><NavLink to="/about" activeClassName="active">ABOUT</NavLink></li>
         <li><NavLink to="/contact" activeClassName="active">CONTACT</NavLink></li>
-        <li><NavLink to="/call-now" activeClassName="active"><button>CALL NOW</button></NavLink></li>
+        <li>
+          <NavLink to="#" activeClassName="active" onClick={(e) => {
+          e.preventDefault();  // Stop navigation
+           window.location.href = "tel:+2779 288 9816"; // Make call
+    }}>
+        CALL NOW
+    </NavLink>
+</li>
+
       </ul>
     </div>
   );

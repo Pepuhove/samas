@@ -5,8 +5,12 @@ function CallNow() {
     return (
        <>
         <div>
-            <h1>Call Now Page</h1>
-            <p>Thank you for choosing to call us. Reach us at +123456789!</p>
+        <li>
+            <button onClick={() => window.location.href = "tel:+1234567890"}>
+        CALL NOW
+    </button>
+</li>
+
         </div>
         <Footer/>
        </>

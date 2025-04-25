@@ -7,7 +7,6 @@
     margin: 0;
     left: 0;
     padding-top: 38.25%;  /* 16:9 aspect ratio */
-    height: auto;
     background-size: cover;
     background-position: center;
     background-image: url('/public/img/zim-2.jpg');
