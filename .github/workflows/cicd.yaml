@@ -2,10 +2,10 @@ name: Secure CI/CD Pipeline
 
 
 on:
-    workflow-dispatch:
-#   push:
-#     branches:
-#       - main
+   
+  push:
+    branches:
+      - main
 
 jobs:
   sonar:
