@@ -5,17 +5,17 @@ Welcome to **Samas Arts**, an online art store where you can purchase amazing ar
 
 ![Homepage Screenshot](https://github.com/user-attachments/assets/014bf768-8aef-47e7-a481-bdf83b8b307f)
 ---
-
+<br><br>
 
 ![Homepage Screenshot](https://github.com/user-attachments/assets/f9be439e-2863-433e-b8b4-cdcf7d633397)
 
-
+<br><br>
 ![Homepage Screenshot](https://github.com/user-attachments/assets/dd511426-8969-4a86-a71c-1e74d012477f)
-
+<br><br>
 
 ![Homepage Screenshot](https://github.com/user-attachments/assets/6fed18f1-3747-4673-be73-65b6da9ded26)
 
-
+<br><br>
 
 ## 🧰 Tech Stack & Tools
 
