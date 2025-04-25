@@ -45,7 +45,7 @@ resource "aws_ecs_task_definition" "task" {
     }]
   }])
 }
-
+# 
 # Application Load Balancer (ALB)
 resource "aws_lb" "app_lb" {
   name               = "${var.app_name}-lb"
