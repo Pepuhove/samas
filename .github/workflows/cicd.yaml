@@ -3,9 +3,9 @@ name: Secure CI/CD Pipeline
 
 on:
    
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 # 
 jobs:
   sonar:
