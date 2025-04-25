@@ -1,14 +1,15 @@
 name: Deploy to Amazon ECS
 # 
 on:
-  workflow_run:
-    workflows: ["Secure CI/CD Pipeline"]
-    types:
-      - completed
-  push:
+  
+  # workflow_run:
+  #   workflows: ["Secure CI/CD Pipeline"]
+  #   types:
+  #     - completed
+   push:
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout code
@@ -53,6 +54,6 @@ jobs:
         run: terraform apply -auto-approve
         working-directory: ./terraform
 
-      - name: 🧹 Terraform Destroy (Optional)
-        run: terraform destroy -auto-approve
-        working-directory: ./terraform
+      # - name: 🧹 Terraform Destroy (Optional)
+      #   run: terraform destroy -auto-approve
+      #   working-directory: ./terraform
