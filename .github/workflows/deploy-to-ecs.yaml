@@ -1,11 +1,11 @@
 name: Deploy to Amazon ECS
 
 on:
-  workflow_run:
-    workflows: ["Secure CI/CD Pipeline"]
-    types:
-      - completed
-
+#   workflow_run:
+#     workflows: ["Secure CI/CD Pipeline"]
+#     types:
+#       - completed
+   push:
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
