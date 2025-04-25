@@ -18,8 +18,11 @@ WORKDIR /app
 
 RUN npm install -g serve
 
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/dist /app/dist
 
-EXPOSE 3000
+EXPOSE 5175
 
-CMD ["serve", "-s", "dist", "-l", "3000"]
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+  CMD wget --quiet --spider http://localhost:5175 || exit 1
+
+CMD ["serve", "-s", "dist", "-l", "5175"]

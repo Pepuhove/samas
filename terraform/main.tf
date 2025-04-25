@@ -34,8 +34,8 @@ resource "aws_ecs_task_definition" "task" {
     essential     = true
     portMappings  = [
       {
-        containerPort = 3000
-        hostPort      = 3000
+        containerPort = 5175
+        hostPort      = 5175
       }
     ]
   }])
@@ -58,7 +58,7 @@ resource "aws_lb" "app_lb" {
 # Define Load Balancer Target Group
 resource "aws_lb_target_group" "app_target_group" {
   name        = "${var.app_name}-tg"
-  port        = 3000
+  port        = 5175
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
   target_type = "ip" # Fargate requires "ip"
@@ -93,7 +93,7 @@ resource "aws_ecs_service" "service" {
   load_balancer {
     target_group_arn = aws_lb_target_group.app_target_group.arn
     container_name   = var.app_name
-    container_port   = 3000
+    container_port   = 5175
   }
 
   depends_on = [
