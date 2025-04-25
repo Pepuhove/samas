@@ -3,7 +3,7 @@
 Welcome to **Samas Arts**, an online art store where you can purchase amazing art pieces, all deployed on **Amazon ECS (Fargate)** with a **Node.js** backend, and utilizing **Terraform** for infrastructure provisioning. The app is containerized with **Docker**, pushed to **Amazon ECR**, and deployed via **ECS**.
 
 
-
+![Homepage Screenshot](https://github.com/user-attachments/assets/014bf768-8aef-47e7-a481-bdf83b8b307f)
 ---
 
 ## 🧰 Tech Stack & Tools
